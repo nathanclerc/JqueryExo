@@ -64,7 +64,28 @@ console.log(agrandi);
 	if(agrandi>=100){
 		agrandi=0;
 			}
-		
-
-	
 });
+//////////////////////////////////////////////////////////////
+ $(document).keydown(function(e){
+ 	var gauche = $("#carre").css('margin-left');
+
+   if (gauche<10) {
+   	   console.log(gauche);
+   	$("#carre").css('margin-left', "1500");
+   }
+   switch (e.which){
+     case 37: // fleche gauche
+       $('#carre').css('margin-left', '-=10');
+       break;
+     case 38: // fleche haut
+       $('#carre').css('margin-top', '-=10');
+       break; 
+     case 39: // fleche droite
+       $('#carre').css('margin-left', '+=10');
+       break;
+     case 40: // fleche bas
+       $('#carre').css('margin-top', '+=10');
+       break;
+   }
+
+}); 
